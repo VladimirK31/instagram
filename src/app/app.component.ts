@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'instagram';
+interface IUser {
+  name: string;
+  age: number;
 }
+
+@Component({
+  selector: 'inst-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {}
