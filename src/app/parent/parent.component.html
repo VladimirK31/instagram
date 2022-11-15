@@ -1,5 +1,23 @@
-<div>
-  <inst-child (sendGrateEvent)="getGrate($event)"> </inst-child>
-  <h2>math: {{ math }}</h2>
-  <h2>physic: {{ physic }}</h2>
+<div *ngIf="isLoading">
+  <h1>Loading...</h1>
 </div>
+
+<ng-container *ngIf="!isLoading">
+  <div *ngFor="let lesson of lessons">
+    <div>
+      <h3>{{ lesson.title }}</h3>
+      <div>
+        <h3>
+          weekGrade
+          <div *ngFor="let grade of lesson.weekGrades">
+            {{ grade.gradeItem }}
+          </div>
+        </h3>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- <div *ngFor="let el of grades; index as i; count as count; even as even">
+    {{ i }}-{{ el }} count: {{ count }} even: {{ even }}
+  </div> -->
